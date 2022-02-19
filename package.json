@@ -1,0 +1,19 @@
+{
+  "name": "tinder_server",
+  "version": "1.0.0",
+  "description": "Tinder API node.js",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon ."
+  },
+  "author": "Jesus Gonzalez Nieto",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  },
+  "dependencies": {
+    "dotenv": "^16.0.0",
+    "express": "^4.17.3",
+    "mongoose": "^6.2.2"
+  }
+}
