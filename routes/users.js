@@ -5,5 +5,7 @@ const router = express.Router();
 //Api users
 router.post("/register", userController.register);
 router.post("/login", userController.login);
+router.post("/add", userController.add);
+router.post("/delete", userController.delete);
 
 module.exports = router;
