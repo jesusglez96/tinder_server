@@ -1,6 +1,15 @@
 const User = require("../models/User");
 
 module.exports = {
+  async index(req, res) {
+    try {
+      const user = await User.findOne({ id: req.body.id });
+      return res.status(200).send({ data: user.matches });
+    } catch (error) {
+      console.log(error);
+      res.status(500).send("Hubo un error");
+    }
+  },
   async login(req, res) {
     try {
       User.findOne(req.body, (err, user) => {
@@ -39,7 +48,6 @@ module.exports = {
   },
   async delete(req, res) {
     try {
-      console.log(req.body);
       const user = await User.findOne({ id: req.body.id });
 
       user.matches.splice(req.body.matchIndex, 1);
