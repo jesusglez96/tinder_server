@@ -1,6 +1,7 @@
 const express = require("express");
 const connectDB = require("./config/db");
-const userController = require("./controllers/userController");
+const cors = require("cors");
+require("dotenv").config();
 //Create server instance
 const app = express();
 
@@ -8,16 +9,16 @@ const app = express();
 connectDB();
 
 //JSON permissions manipulation
+app.use(cors());
 app.use(express.json());
-
 //Route handlers
-app.use("/api/users", require("./routes/users"));
+app.use("/api", require("./routes/matches"));
 
 // app.get("/", (req, res) => {
 //   res.send("Hola mundo");
 // });
 
 //Configuration server port listen
-app.listen(4000, () => {
+app.listen(process.env.PORT, () => {
   console.log("el servidor escucha correctamente");
 });
