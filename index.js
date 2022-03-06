@@ -19,9 +19,9 @@ app.use(express.json());
 //Route handlers
 app.use("/api", require("./routes/matches"));
 
-app.get("*", (req, res) => {
-  res.sendFile(path.resolve(__dirname, "public/index.html"));
-});
+// app.get("*", (req, res) => {
+//   res.sendFile(path.resolve(__dirname, "public/index.html"));
+// });
 
 //Configuration server port listen
 app.listen(process.env.PORT, () => {
